@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Insha ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;color:white;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(135deg,#180b32,#8b145b,#ed477d);
+}
+.card{padding:25px;position:relative;z-index:2}
+h1{font-size:38px;text-shadow:0 0 18px pink}
+p{font-size:20px;line-height:1.6}
+.cake{font-size:90px;animation:bounce 1.2s infinite}
+.heart{position:absolute;bottom:-40px;animation:rise 7s linear infinite}
+button{
+ border:0;border-radius:30px;padding:14px 25px;
+ background:#ffb6d9;color:#701044;font-size:18px;
+ font-weight:bold;margin-top:15px;
+}
+@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@keyframes bounce{50%{transform:translateY(-15px)}}
+</style>
+</head>
+<body>
+<div class="card">
+ <div style="font-size:55px">💖🌹✨</div>
+ <h1>Happy Birthday Insha ❤️</h1>
+ <div class="cake">🎂</div>
+ <p>You Are My Special Person! 💕</p>
+ <p>I Love You Jaan! 🥰</p>
+ <p>May your life always be filled with love and happiness.</p>
+ <button onclick="celebrate()">Tap for a Surprise 💝</button>
+ <p id="msg"></p>
+</div>
+<script>
+function celebrate(){
+ document.getElementById("msg").innerHTML=
+ "You are the most beautiful part of my life, Insha! ❤️😘";
+ for(let i=0;i<35;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML=["❤️","💖","💕","🌹","✨"][i%5];
+  h.style.left=Math.random()*100+"%";
+  h.style.animationDelay=Math.random()*3+"s";
+  h.style.fontSize=(20+Math.random()*25)+"px";
+  document.body.appendChild(h);
+ }
+}
+</script>
+</body>
+</html>
